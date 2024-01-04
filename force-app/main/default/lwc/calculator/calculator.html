@@ -44,8 +44,10 @@
             onclick={calculateOutput}
             ></lightning-button>
         </div>
-        <div class="slds-p-around_medium">
-            <p>Output : {result}</p>
-        </div>
+        <template lwc:if={displayOutput}>
+            <div class="slds-p-around_medium">
+                <p>Output : {result}</p>
+            </div>
+        </template>
     </lightning-card>
 </template>

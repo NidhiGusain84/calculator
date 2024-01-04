@@ -4,6 +4,7 @@ export default class Calculator extends LightningElement {
     numberOne = "";
     numberTwo = "";
     result = 0;
+    displayOutput = false;
 
     changeHandler(event){
        // this.numberOne = event.target.value;
@@ -17,6 +18,7 @@ export default class Calculator extends LightningElement {
         
     }
     calculateOutput(event){
+        this.displayOutput = true;
         let labelEmement = event.target.label;
         if(labelEmement === "Add"){
             this.result = parseInt(this.numberOne) + parseInt(this.numberTwo);
