@@ -2,12 +2,16 @@
     <lightning-card title="Calculator" icon-name="custom:custom14">
         <div class="slds-p-around_medium">
             <!--Inputs-->
-            <lightning-input label="Number 1"
-             onchange={changeHandlerNumberOne}
+            <lightning-input
+             label="Number 1"
+             name="number1"
+             onchange={changeHandler}
              placeholder="Enter First Number"
             ></lightning-input>
-            <lightning-input label="Number 2"
-             onchange={changeHandlerNumberTwo}
+            <lightning-input 
+            label="Number 2"
+            name="number2"
+             onchange={changeHandler}
              placeholder="Enter Second Number"
             ></lightning-input>
 
@@ -18,24 +22,24 @@
             label="Add"
             variant="brand"
             class="slds-p-around_medium"
-            onclick={addHandler}
+            onclick={calculateOutput}
             ></lightning-button>
             <lightning-button
             label="Sub"
             variant="brand"
             class="slds-p-around_medium"
-            onclick={subHandler}
+            onclick={calculateOutput}
             ></lightning-button>
             <lightning-button
             label="Mul"
             variant="brand"
             class="slds-p-around_medium"
-            onclick={mulHandler}
+            onclick={calculateOutput}
             ></lightning-button><lightning-button
             label="Div"
             variant="brand"
             class="slds-p-around_medium"
-            onclick={divHandler}
+            onclick={calculateOutput}
             ></lightning-button>
         </div>
         <div class="slds-p-around_medium">

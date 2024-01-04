@@ -5,26 +5,27 @@ export default class Calculator extends LightningElement {
     numberTwo = "";
     result = 0;
 
-    changeHandlerNumberOne(event){
-        this.numberOne = event.target.value;
-        console.log("this.numberOne", this.numberOne);
+    changeHandler(event){
+       // this.numberOne = event.target.value;
+        //console.log("this.numberOne", this.numberOne);
+        let {name, value} = event.target;
+        if(name === "number1"){
+            this.numberOne = value;
+        }else if(name === "number2"){
+            this.numberTwo = value;
+        }
+        
     }
-
-    changeHandlerNumberTwo(event){
-        this.numberTwo = event.target.value;
-        console.log("this.numberTwo", this.numberTwo);
-    }
-
-    addHandler(event){
-        this.result = parseInt(this.numberOne) + parseInt(this.numberTwo);
-    }
-    subHandler(event){
-        this.result = parseInt(this.numberOne) - parseInt(this.numberTwo);
-    }
-    mulHandler(event){
-        this.result = parseInt(this.numberOne) * parseInt(this.numberTwo);
-    }
-    divHandler(event){
-        this.result = parseInt(this.numberOne) / parseInt(this.numberTwo);
-    }
+    calculateOutput(event){
+        let labelEmement = event.target.label;
+        if(labelEmement === "Add"){
+            this.result = parseInt(this.numberOne) + parseInt(this.numberTwo);
+        }else if(labelEmement === "Sub"){
+            this.result = parseInt(this.numberOne) - parseInt(this.numberTwo);
+        }else if(labelEmement === "Mul"){
+            this.result = parseInt(this.numberOne) * parseInt(this.numberTwo);
+        }else if(labelEmement === "Div"){
+            this.result = parseInt(this.numberOne) / parseInt(this.numberTwo);
+        }
 }
+   }
