@@ -27,5 +27,9 @@ export default class Calculator extends LightningElement {
         }else if(labelEmement === "Div"){
             this.result = parseInt(this.numberOne) / parseInt(this.numberTwo);
         }
-}
+        //reset
+        this.numberOne = "";
+        this.numberTwo = "";
+    }
+    
    }
